@@ -1,0 +1,25 @@
+import random
+
+n = [21,22,23,24,25,26,27,28,28,29]
+
+t = ["medicamentos", "vacina", "antibioticoterapia", "praziquantel"]
+
+e = ["Toxoplasmose", "Raiva", "Dipilidiose", "Leptospirose","Dermatomicose"]
+
+for i in range(10):
+  nx = random.choice(n)
+  ex = random.choice(e)
+
+  if ex == "Toxoplasmose":
+    tx = t[0]
+  elif ex == "Raiva":
+    tx = t[1]
+  elif ex == "Leptospirose":
+    tx = t[2]
+  elif ex == "Dipilidiose":
+    tx = t[3]
+  elif ex == "Dermatomicose":
+    tx = t[0]
+  print("insert into Enfermidade (nome_tratamento, cod_enfer, nome_doenca)")
+  print("values (\'{}\',{},\'{}\');".format(tx,nx,ex))
+  n.remove(nx)
